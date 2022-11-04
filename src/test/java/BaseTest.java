@@ -15,9 +15,9 @@ public class BaseTest {
 
     @BeforeAll
     static void setUp() {
-        String browserName = System.getProperty("browser", "chrome")
+        String browserName = System.getProperty("browser", "chrome");
         String browserVer = System.getProperty("browserVersion", "100");
-        String browserSize = System.getProperty("browserSize", "1920x1500");
+        String browserSize = System.getProperty("browserSize", "1920x1050");
         String remoteUrl = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         step("Устанавливаем интеграцию с Selenide", () -> {
@@ -53,7 +53,7 @@ public class BaseTest {
     }
 
     @AfterAll
-    void CloseWebDriver() {
+    static void CloseWebDriver() {
         step("закрываем вебдрайвер", () -> {
             Selenide.closeWebDriver();
         });
