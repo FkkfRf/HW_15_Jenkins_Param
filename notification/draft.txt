@@ -1,0 +1,16 @@
+t.me/Noti_mBot
+
+5650771780:AAGDGV2pYZMlzdQvwmjqN4lz6D9rlHMyydA
+
+-1001841030440
+
+curl https://api.telegram.org/bot5650771780:AAGDGV2pYZMlzdQvwmjqN4lz6D9rlHMyydA/getUpdates | jq .message.chat.id
+
+curl -X POST \
+-H 'Content-Type: application/json' \
+     -d '{"chat_id": "123456789", "text": "This is a test from curl", "disable_notification": true}' \
+     https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
+
+curl -X POST -H 'Content-Type: application/json' -d '{"chat_id": "-1001841030440", "text": "Приветт, я ботт", "disable_notification": true}' https://api.telegram.org/bot5650771780:AAGDGV2pYZMlzdQvwmjqN4lz6D9rlHMyydA/sendMessage
+
+java "-DconfigFile=notification/telegram.json" -jar notification/allure-notifications-4.2.1.jar
